@@ -32,35 +32,35 @@ def analyze(request):
         params = {'purpose':'Removed Punctuations', 'analyzed_text': analyzed}
         djtext = analyzed
         # return render(request, 'analyze.html', params)
+        
     if(fullcaps=="on"):
         analyzed = ""
         for char in djtext:
             analyzed = analyzed + char.upper()
-
         params = {'purpose': 'Changed to Uppercase', 'analyzed_text': analyzed}
-        djtext = analyzed
-        # Analyze the text
-        # return render(request, 'analyze.html', params)  
+        djtext = analyzed       
+        # return render(request, 'analyze.html', params)
+        
     if (newlineremover == "on"):
         analyzed = ""
         for char in djtext:
             if char != "\n" and char!="\r":
                 analyzed = analyzed + char
             else:
-                print("no")
-        # print("pre", analyzed)
+                print("no")        
         params = {'purpose': 'Removed NewLines', 'analyzed_text': analyzed}
         # return render(request, 'analyze.html', params)
+        
     if(extraspaceremover=="on"):
         analyzed = ""
         for index, char in enumerate(djtext):
             if not(djtext[index] == " " and djtext[index+1]==" "):
                 analyzed = analyzed + char
-
         params = {'purpose': 'Removed NewLines', 'analyzed_text': analyzed}
         djtext = analyzed
         # Analyze the text
-        # return render(request, 'analyze.html', params)   
+        # return render(request, 'analyze.html', params)
+        
     if charactercounter == 'on':
         # analyzed = len(djtext)        
         analyzed = len(djtext) - djtext.count(' ')
