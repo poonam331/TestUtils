@@ -32,53 +32,38 @@ def analyze(request):
         params = {'purpose':'Removed Punctuations', 'analyzed_text': analyzed}
         djtext = analyzed
         # return render(request, 'analyze.html', params)
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> a3207a8b7e0438e255eca63a38db88c50e739fc7
     if(fullcaps=="on"):
         analyzed = ""
         for char in djtext:
             analyzed = analyzed + char.upper()
+
         params = {'purpose': 'Changed to Uppercase', 'analyzed_text': analyzed}
-<<<<<<< HEAD
         djtext = analyzed
         # Analyze the text
         # return render(request, 'analyze.html', params)  
 
-=======
-        djtext = analyzed       
-        # return render(request, 'analyze.html', params)
-        
->>>>>>> a3207a8b7e0438e255eca63a38db88c50e739fc7
     if (newlineremover == "on"):
         analyzed = ""
         for char in djtext:
             if char != "\n" and char!="\r":
                 analyzed = analyzed + char
             else:
-                print("no")        
+                print("no")
+        # print("pre", analyzed)
         params = {'purpose': 'Removed NewLines', 'analyzed_text': analyzed}
         # return render(request, 'analyze.html', params)
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> a3207a8b7e0438e255eca63a38db88c50e739fc7
     if(extraspaceremover=="on"):
         analyzed = ""
         for index, char in enumerate(djtext):
             if not(djtext[index] == " " and djtext[index+1]==" "):
                 analyzed = analyzed + char
+
         params = {'purpose': 'Removed NewLines', 'analyzed_text': analyzed}
         djtext = analyzed
         # Analyze the text
-<<<<<<< HEAD
         # return render(request, 'analyze.html', params)   
-=======
-        # return render(request, 'analyze.html', params)
->>>>>>> a3207a8b7e0438e255eca63a38db88c50e739fc7
         
     if charactercounter == 'on':
         # analyzed = len(djtext)        
